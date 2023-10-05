@@ -4,7 +4,7 @@ import { OpeningAnimation } from "./home/OpeningAnimation";
 import { Navbar } from "./navbar/Navbar";
 
 function Provider({ children }: { children: React.ReactNode }) {
-  const [isSection1Loaded, setIsSection1Loaded] = useState<boolean>(false);
+  const [isSection1Loaded, setIsSection1Loaded] = useState<boolean>(true);
 
   useEffect(() => {
     // Simulate loading of section1

@@ -37,6 +37,32 @@ export const Navbar = () => {
             <HiOutlineMenuAlt4 size={25} />
           )}
         </motion.div>
+
+        <motion.div
+          transition={{ duration: isActive ? 1.5 : 0.5 }}
+          animate={{
+            width: isActive ? "400px" : "0px",
+            height: isActive ? "50vh" : "0px",
+            borderRadius: "20px",
+            display: "flex",
+            // backgroundColor: isActive ? "red" : "green",
+          }}
+          className={`nav-components ${
+            isActive ? "block  " : "hidden "
+          } w-[400px] h-[60vh] shadow-lg bg-white absolute top-0 right-0 md:top-6 md:right-10`}
+        >
+          <div
+            className={`${
+              isActive ? "flex " : "hidden"
+            } flex-col gap-4 py-6 px-10`}
+          >
+            <h1>Navlink</h1>
+            <h1>Navlink</h1>
+            <h1>Navlink</h1>
+            <h1>Navlink</h1>
+            <h1>Navlink</h1>
+          </div>
+        </motion.div>
       </nav>
     </>
   );
