@@ -39,7 +39,7 @@ export const Navbar = () => {
         </motion.div>
 
         <motion.div
-          transition={{ duration: isActive ? 1.5 : 0.5 }}
+          transition={{ duration: isActive ? 1 : 0.5 }}
           animate={{
             width: isActive ? "400px" : "0px",
             height: isActive ? "50vh" : "0px",

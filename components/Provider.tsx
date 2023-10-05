@@ -10,7 +10,7 @@ function Provider({ children }: { children: React.ReactNode }) {
     // Simulate loading of section1
     setTimeout(() => {
       setIsSection1Loaded(true);
-    }, 3500); // Adjust the time to match your actual loading time
+    }, 3100); // Adjust the time to match your actual loading time
     // You can replace the setTimeout above with your actual loading logic.
   }, []);
 
