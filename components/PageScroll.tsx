@@ -38,7 +38,7 @@ export const PageScroll = () => {
             </span>
           ))}
         </div>
-        <div className="z-10 w-4 h-4 bg-slate-200 absolute top-[50%] transform -translate-y-[50%] left-[50%] -translate-x-[50%]"></div>
+        <Link href={"/"} className="z-10 w-4 h-4 bg-slate-200  absolute top-[50%] transform -translate-y-[50%] left-[50%] -translate-x-[50%]"></Link>
       </motion.div>
     </>
   );
