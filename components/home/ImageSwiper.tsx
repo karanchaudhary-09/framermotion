@@ -19,9 +19,12 @@ export default function App() {
         loop
         pagination={{
           clickable: true,
-          el: '.project-swiper-pagination',
+          el: ".project-swiper-pagination",
         }}
-        autoplay={{ delay: 3 }}
+        autoplay={{
+          delay: 3000, // Autoplay delay in milliseconds (3 seconds in this case)
+          disableOnInteraction: false, // Autoplay will not be disabled after user interactions
+        }}
         modules={[Pagination]}
         className="project-swiper-container "
       >
