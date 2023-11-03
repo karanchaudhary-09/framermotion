@@ -16,7 +16,7 @@ const Projects = () => {
         start: "top 75%",
         end: `top 25%`,
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     });
 
