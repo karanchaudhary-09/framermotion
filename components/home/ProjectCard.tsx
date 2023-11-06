@@ -52,8 +52,12 @@ export const ProjectCard = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col gap-10 bg-black text-white animation-item ease p-10  rounded-lg group  hover:scale-110 hover:shadow-2xl transition duration-700 ease-out ">
-      <div className="project-wrapper w-full h-full flex justify-between ">
+    <div
+      onMouseEnter={mouseEnterProjectname}
+      onMouseLeave={mouseLeaveProjectname}
+      className="w-full h-full flex flex-col gap-10 bg-black text-white animation-item ease p-10  rounded-lg group  hover:scale-110 hover:shadow-2xl transition duration-700 ease-out "
+    >
+      <div className="project-wrapper w-full h-full flex flex-col sm:flex-row gap-6 justify-between ">
         <div className="project-logo relative w-[60px] h-[60px] rounded-full bg-white overflow-hidden hover:cursor-pointer hover:scale-150 transition duration-700 ease-out">
           <Image src="/images.jpg" fill alt="design" />
         </div>
@@ -64,11 +68,7 @@ export const ProjectCard = () => {
       </div>
 
       <div className="project-details-wrapper flex flex-col gap-4">
-        <h1
-          className="project-title text-[62px] font-semibold hover:cursor-pointer "
-          onMouseEnter={mouseEnterProjectname}
-          onMouseLeave={mouseLeaveProjectname}
-        >
+        <h1 className="project-title  text-[42px] lg:text-[62px] font-semibold hover:cursor-pointer ">
           Project Name
         </h1>
         <div ref={lineRef} className="w-0 h-[2px] bg-white -mt-4"></div>
