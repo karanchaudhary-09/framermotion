@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/all";
 import { ProjectCard } from "./ProjectCard";
 
 const CardScrollAnimation = () => {
-  const animationItemRefs = Array.from({ length: 3 }, () =>
+  const animationItemRefs = Array.from({ length: 10 }, () =>
     useRef<any[]>(null)
   );
   const animationItemRef = useRef(null);
@@ -15,8 +15,8 @@ const CardScrollAnimation = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: animationItemRef.current,
-        start: "top center",
-        end: "+=600px",
+        start: "top 70%",
+        end: "+=700px",
         scrub: 2,
         markers: true,
       },
@@ -34,9 +34,8 @@ const CardScrollAnimation = () => {
           y: 0,
           duration: 1,
           position: "absolute",
-          borderRadius: "20px",
-          boxShadow: "rgba(255, 255, 255, 0.35) 5px 5px 5px 10px",
-          top: `${100 * (index + 1)}px `,
+          border: "1px solid red",
+          top: `${30 * (index + 1)}px `,
           delay: 0.5 * (index + 1), // Adjust delay dynamically based on index
         }
       );
@@ -45,22 +44,24 @@ const CardScrollAnimation = () => {
 
   return (
     <div
-      className="fullscreen bg-green-300  flex w-full h-[150vh] py-10 px-4 lg:px-10 overflow-hidden "
+      className="fullscreen   flex w-full h-[70vh] py-10 overflow-hidden "
       id="second"
       ref={animationItemRef}
     >
-      <div className="wrapp relative w-full h-full ">
-        {Array(3)
-          .fill("_")
-          .map((_, i) => (
-            <div
-              key={i}
-              className="w-full lg:w-[30%] h-[600px] absolute bottom-0 hover:z-[1] hover:shadow-2xl hover:shadow-white"
-              ref={animationItemRefs[i]}
-            >
-              <ProjectCard />
-            </div>
-          ))}
+      <div className="container m-[0_auto] w-full h-full p-10 ">
+        <div className="wrapp relative w-full h-full">
+          {Array(8)
+            .fill("_")
+            .map((_, i) => (
+              <div
+                key={i}
+                className="w-[300px] h-[200px] absolute bottom-0  border-red-400 shadow-2xl p-5 bg-white animation-item ease duration-700"
+                ref={animationItemRefs[i]}
+              >
+                Button
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
