@@ -7,24 +7,26 @@ import { InfiniteLoop } from "@/components/home/InfiniteLoop";
 import { MobileDesign } from "@/components/home/MobileDesign";
 import Projects from "@/components/home/Projects";
 import { VelocityAnimation } from "@/components/home/VelocityAnimation";
+import { Services } from "@/components/home/services/Services";
 import { Testominals } from "@/components/home/testominals/Testominals";
 
 export default function Home() {
   return (
     <section className="main-page-wrapper  py-4 ">
-      <PageScroll />
+      {/* <PageScroll /> */}
       {/* <BannerSection /> */}
-      <div className="h-[50vh]">
+      <div className="h-screen">
         {" "}
         <h1>Hellow from Home Page</h1>
       </div>
       {/* <VelocityAnimation /> */}
       {/* <HorizontalScroll /> */}
-      <Projects />
-      <InfiniteLoop />
+      {/* <Projects /> */}
+      {/* <InfiniteLoop /> */}
       {/* <Testominals /> */}
-      
-      <section className="h-[20vh]"></section>
+      <Services />
+
+      <section className="h-screen"></section>
     </section>
   );
 }
