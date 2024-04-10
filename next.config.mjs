@@ -3,7 +3,7 @@ const nextConfig = {
     swcMinify: true,
     reactStrictMode: true,
     images: {
-        domains: ['cdn.discordapp.com'],
+        domains: ['images.unsplash.com'],
     },
 };
 
