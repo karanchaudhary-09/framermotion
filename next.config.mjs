@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    swcPlugins: true,
+    swcMinify: true,
+  },
+  images: {
+    domains: ["images.unsplash.com"],
   },
 };
 
