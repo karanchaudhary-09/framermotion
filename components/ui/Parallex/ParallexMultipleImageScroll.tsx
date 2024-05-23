@@ -22,18 +22,20 @@ export const ParallaxMultipleImageScroll = ({
   const translateFirst = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const translateSecond = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const translateThird = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const translateFourth = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   const third = Math.ceil(images.length / 3);
 
-  const firstPart = images.slice(0, third);
-  const secondPart = images.slice(third, 2 * third);
-  const thirdPart = images.slice(2 * third);
+  const firstPart = images.slice(2, third);
+  const secondPart = images.slice(0, third);
+  const thirdPart = images.slice(0, 1 * third);
+  const fourthPart = images.slice(2 * third);
 
   return (
     <div
       className={cn(
         "h-[200vh] items-start overflow-y-hidden w-full relative ",
-        className,
+        className
       )}
       ref={gridRef}
     >
@@ -78,6 +80,22 @@ export const ParallaxMultipleImageScroll = ({
             <motion.div
               key={"grid-3" + index}
               style={{ y: translateThird }} // Apply the translateY motion value here
+            >
+              <Image
+                src={image}
+                className="min-h-80 min-w-[280px] object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                height="400"
+                width="400"
+                alt="thumbnail"
+              />
+            </motion.div>
+          ))}
+        </div>
+        <div className="flex flex-col gap-2">
+          {fourthPart?.map((image, index: number) => (
+            <motion.div
+              key={"grid-3" + index}
+              style={{ y: translateFourth }} // Apply the translateY motion value here
             >
               <Image
                 src={image}
