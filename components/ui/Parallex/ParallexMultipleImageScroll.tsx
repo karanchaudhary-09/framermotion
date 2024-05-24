@@ -35,7 +35,7 @@ export const ParallaxMultipleImageScroll = ({
     <div
       className={cn(
         "h-[200vh] items-start overflow-y-hidden w-full relative ",
-        className
+        className,
       )}
       ref={gridRef}
     >
