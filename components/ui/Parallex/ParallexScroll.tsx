@@ -14,17 +14,17 @@ export const MobileScrollParalax = ({ className }: { className?: string }) => {
     offset: ["start end", "end start"], // remove this if your container is not fixed height
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1.5], [0, -100]);
+  const translateFirst = useTransform(scrollYProgress, [0, 1.5], [0, -150]);
   const translateSecond = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateThird = useTransform(scrollYProgress, [0, 0.7], [0, -300]);
-  const translateFourth = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateFifth = useTransform(scrollYProgress, [0, 1.5], [0, -100]);
+  const translateThird = useTransform(scrollYProgress, [0, 0.6], [0, -300]);
+  const translateFourth = useTransform(scrollYProgress, [0, 1.5], [0, -180]);
+  const translateFifth = useTransform(scrollYProgress, [0, 0.6], [0, -150]);
 
   return (
     <div
       className={cn(
         "h-screen flex justify-center items-start overflow-hidden  w-full relative ",
-        className,
+        className
       )}
       ref={gridRef}
     >
