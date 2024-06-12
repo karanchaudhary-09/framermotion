@@ -24,7 +24,7 @@ export const MobileScrollParalax = ({ className }: { className?: string }) => {
     <div
       className={cn(
         "h-screen flex justify-center items-start overflow-hidden  w-full relative ",
-        className
+        className,
       )}
       ref={gridRef}
     >
