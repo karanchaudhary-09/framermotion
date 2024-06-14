@@ -7,6 +7,7 @@ import {
   ParallexScrollMultipleDemo,
 } from "@/components/ui/Parallex/ParallaxScrollDemo";
 import { StickyScrollRevealDemo } from "@/components/ui/stickyscroll/sticky-scroll";
+import ZoomParallex from "@/components/ZoomParallex/ZoomParallex";
 
 export default function Home() {
   return (
@@ -16,17 +17,17 @@ export default function Home() {
         <LandingHeaderSection />
       </AuroraBackground>
       <ParallexScrollMultipleDemo />
-      <div className="w-full h-[1200px] bg-slate-500"></div>
       {/* <div
         className="-mt-[350px]  flex justify-center items-center  h-screen
       "
       >
         <ParallaxScrollDemo />
       </div> */}
-      <StickyScrollRevealDemo />
-      <div className="w-full h-screen bg-slate-500"></div>
-      <div className="w-full h-screen bg-slate-500"></div>
-      <div className="w-full h-screen bg-slate-500"></div>
+      {/* <StickyScrollRevealDemo /> */}
+      <div className="mt-10"></div>
+      <ZoomParallex />
+
+      <div className="h-screen"></div>
       {/* <HeroSection2 /> */}
     </main>
   );
