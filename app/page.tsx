@@ -15,7 +15,7 @@ export default function Home() {
       <ParallexScrollMultipleDemo />
       <div className="w-full h-[1200px] bg-slate-500"></div>
       <div
-        className="-mt-[350px]  flex justify-center items-center  h-screen
+        className="-mt-[350px] flex justify-center items-center  h-screen
       "
       >
         <ParallaxScrollDemo />
