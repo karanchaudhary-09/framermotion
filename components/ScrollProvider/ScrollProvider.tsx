@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 import Lenis from "lenis";
+import { TopHeader } from "../navbar/TopHeader";
+import { twMerge } from "tailwind-merge";
 
 export default function ScrollProvider({
   children,
@@ -17,5 +19,10 @@ export default function ScrollProvider({
 
     requestAnimationFrame(raf);
   });
-  return <div>{children}</div>;
+  return (
+    <>
+      <TopHeader />
+      {children}
+    </>
+  );
 }

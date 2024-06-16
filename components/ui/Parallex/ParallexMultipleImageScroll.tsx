@@ -34,13 +34,13 @@ export const ParallaxMultipleImageScroll = ({
   return (
     <div
       className={cn(
-        "h-[200vh] items-start overflow-y-hidden w-full relative ",
-        className,
+        "h-screen items-start overflow-y-hidden w-full relative ",
+        className
       )}
       ref={gridRef}
     >
       <div
-        className="w-full h-[150vh] absolute top-10 flex justify-center items-center flex-nowrap gap-6 overflow-hidden  "
+        className="w-full h-screen absolute top-10 flex justify-center items-center flex-nowrap gap-6 overflow-hidden  "
         ref={gridRef}
       >
         <div className="flex flex-col gap-2">
