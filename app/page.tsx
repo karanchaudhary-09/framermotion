@@ -1,4 +1,5 @@
 import { StickyFooter } from "@/components/Footer/StickyFooter";
+import SmoothScrollCardSection from "@/components/smoothScrollCardSection/SmoothScrollCardSection";
 import { HeroSection } from "@/components/ui/AboutUs/hero-section";
 import { AuroraBackground } from "@/components/ui/herosection/aurora-background";
 import { LandingHeaderSection } from "@/components/ui/herosection/landing-header-section";
@@ -28,6 +29,8 @@ export default function Home() {
       <div className="mt-10"></div>
       <ZoomParallex />
 
+      <div className="mt-40"></div>
+      <SmoothScrollCardSection />
       <div className="h-screen"></div>
       <StickyFooter />
       {/* <HeroSection2 /> */}
