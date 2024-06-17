@@ -19,10 +19,10 @@ export const ParallaxMultipleImageScroll = ({
     offset: ["start end", "end start"], // remove this if your container is not fixed height
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translateFourth = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const translateFirst = useTransform(scrollYProgress, [0, 1], [-300, 600]);
+  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const translateThird = useTransform(scrollYProgress, [0, 1], [-300, 600]);
+  const translateFourth = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
   const third = Math.ceil(images.length / 3);
 
@@ -34,13 +34,13 @@ export const ParallaxMultipleImageScroll = ({
   return (
     <div
       className={cn(
-        "h-[200vh] items-start overflow-y-hidden w-full relative ",
-        className,
+        "h-screen items-start overflow-y-hidden w-full relative  bg-black",
+        className
       )}
       ref={gridRef}
     >
       <div
-        className="w-full h-[150vh] absolute top-10 flex justify-center items-center flex-nowrap gap-6 overflow-hidden  "
+        className="w-full h-screen absolute top-10 flex justify-center items-center flex-nowrap gap-6 overflow-hidden  "
         ref={gridRef}
       >
         <div className="flex flex-col gap-2">

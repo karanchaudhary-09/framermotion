@@ -1,3 +1,4 @@
+import { StickyFooter } from "@/components/Footer/StickyFooter";
 import { HeroSection } from "@/components/ui/AboutUs/hero-section";
 import { AuroraBackground } from "@/components/ui/herosection/aurora-background";
 import { LandingHeaderSection } from "@/components/ui/herosection/landing-header-section";
@@ -11,7 +12,7 @@ import ZoomParallex from "@/components/ZoomParallex/ZoomParallex";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-black">
       {/* <HeroSection /> */}
       <AuroraBackground>
         <LandingHeaderSection />
@@ -28,6 +29,7 @@ export default function Home() {
       <ZoomParallex />
 
       <div className="h-screen"></div>
+      <StickyFooter />
       {/* <HeroSection2 /> */}
     </main>
   );

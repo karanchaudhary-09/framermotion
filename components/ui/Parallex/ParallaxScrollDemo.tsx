@@ -10,7 +10,7 @@ export function ParallaxScrollDemo() {
 
 export function ParallexScrollMultipleDemo() {
   return (
-    <div className="h-[150vh] overflow-hidden">
+    <div className="py-20 overflow-hidden">
       <ParallaxMultipleImageScroll images={images} />
     </div>
   );
