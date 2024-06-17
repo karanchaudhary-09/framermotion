@@ -37,3 +37,9 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.no-scroll {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}

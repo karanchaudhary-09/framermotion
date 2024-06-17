@@ -12,15 +12,31 @@ function NavHeader({
   isActive: boolean;
   setIsActive: any;
 }) {
+  const [hasMounted, setHasMounted] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const navRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const linkControlsArray = navData.map(() => useAnimation());
 
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   useLayoutEffect(() => {
+    if (!hasMounted) return;
+
     if (isActive) {
+      // Save the current scroll position
+      setScrollPosition(window.scrollY);
+      // Disable scroll and hide scrollbar
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.width = "100%";
+
       controls.start({
         width: "100%",
-        transition: { duration: 1, ease: [0.5, 0, 0.2, 1] },
+        transition: { duration: 0.7, ease: [0.5, 0, 0.1, 1] },
       });
       linkControlsArray.forEach((controls, index) => {
         controls.start({
@@ -29,14 +45,20 @@ function NavHeader({
           transition: {
             delay: 0.05 * (index + 1),
             duration: 0.5,
-            ease: [0.5, 0, 0.2, 1],
+            ease: [0.5, 0, 0.1, 1],
           },
         });
       });
     } else {
+      // Restore scroll and show scrollbar
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      window.scrollTo(0, scrollPosition);
+
       controls.start({
         width: "0%",
-        transition: { delay: 0.2, duration: 1, ease: [0.5, 0, 0.2, 1] },
+        transition: { delay: 0.2, duration: 0.7, ease: [0.5, 0, 0.1, 1] },
       });
       linkControlsArray.forEach((controls, index) => {
         controls.start({
@@ -45,21 +67,22 @@ function NavHeader({
           transition: {
             delay: 0.05 * (index + 1),
             duration: 0.5,
-            ease: [0.5, 0, 0.2, 1],
+            ease: [0.5, 0, 0.1, 1],
           },
         });
       });
     }
-  }, [isActive]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isActive, hasMounted]);
 
   return (
     <>
       <motion.div
         ref={navRef}
-        className="navbar-wrapper z-[999] bg-gray-800 fixed top-0  w-full h-[100dvh] right-0  text-white overflow-hidden"
+        className="navbar-wrapper  z-[1000] bg-gray-800 fixed top-0  w-full h-[100dvh] right-0  text-white "
         animate={controls}
       >
-        <nav className="nav-wrapper flex justify-center items-center h-screen overflow-hidden">
+        <nav className="nav-wrapper flex justify-center items-center h-screen  ">
           <div className="flex flex-col gap-6">
             {navData?.map((item, index) => (
               <motion.div

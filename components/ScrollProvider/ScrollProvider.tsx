@@ -16,13 +16,14 @@ export default function ScrollProvider({
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
   });
+
   return (
-    <>
+    <div className="provider-container ">
       <TopHeader />
+
       {children}
-    </>
+    </div>
   );
 }
