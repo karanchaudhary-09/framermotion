@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Lenis from "lenis";
 import { TopHeader } from "../navbar/TopHeader";
 import { twMerge } from "tailwind-merge";
+import { StickyFooter } from "../Footer/StickyFooter";
 
 export default function ScrollProvider({
   children,
@@ -22,8 +23,8 @@ export default function ScrollProvider({
   return (
     <div className="provider-container ">
       <TopHeader />
-
       {children}
+      <StickyFooter />
     </div>
   );
 }

@@ -32,7 +32,6 @@ export default function Home() {
       <div className="mt-40"></div>
       <SmoothScrollCardSection />
       <div className="h-screen"></div>
-      <StickyFooter />
       {/* <HeroSection2 /> */}
     </main>
   );
