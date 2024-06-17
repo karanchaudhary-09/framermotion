@@ -4,8 +4,8 @@ import React, { useRef } from "react";
 
 export default function TranslateBottomTop({
   children,
-  duration = 0.7,
-  delay = 0.3,
+  duration = 0.5,
+  delay = 0.2,
 }: {
   children: React.ReactNode;
   duration?: number;
@@ -17,9 +17,9 @@ export default function TranslateBottomTop({
   return (
     <motion.div
       ref={containerRef}
-      initial={{ opacity: 0, translateY: "120px" }}
+      initial={{ opacity: 0, translateY: "100px" }}
       animate={isInView ? { opacity: 1, translateY: "0px" } : {}}
-      transition={{ duration, ease: "backOut", delay }}
+      transition={{ duration, ease: "easeInOut", delay }}
       className={`common-animation `}
     >
       {children}
@@ -29,8 +29,8 @@ export default function TranslateBottomTop({
 
 export function TranslateBottomTopScroll({
   children,
-  duration = 0.7,
-  delay = 0.1,
+  duration = 0.5,
+  delay = 0,
 }: {
   children: React.ReactNode;
   duration?: number;
@@ -39,10 +39,10 @@ export function TranslateBottomTopScroll({
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start center", "end end"],
+    offset: ["start start", "end end"],
   });
 
-  const translateY = useTransform(scrollYProgress, [0, 1], ["0px", "120px"]);
+  const translateY = useTransform(scrollYProgress, [0, 1], ["-120px", "0px"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (

@@ -1,15 +1,18 @@
 import React from "react";
 import FooterContent from "./FooterContent";
-import TranslateBottomTop from "../animation/TranslateBottomTop";
+import TranslateBottomTop, {
+  TranslateBottomTopScroll,
+} from "../animation/TranslateBottomTop";
+import { InfiniteLoopingAnimation } from "../animation/InfiniteLoopAnimtion";
 
 export const StickyFooter = () => {
   return (
     <>
       <div className="bg-black w-full overflow-hidden">
         <TranslateBottomTop>
-          <h1 className="text-9xl text-nowrap text-white ">
-            Infinite Scroll Infinite Scroll Infinite Scroll
-          </h1>
+          <div className="w-full overflow-hidden bg-slate-500">
+            <InfiniteLoopingAnimation />
+          </div>
         </TranslateBottomTop>
       </div>
 
