@@ -26,7 +26,8 @@ function BurgerMenu({
         onMouseLeave={() => {
           setMouseOn(false);
         }}
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
           setIsActive(!isActive);
         }}
       >

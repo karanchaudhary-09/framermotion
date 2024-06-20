@@ -12,27 +12,24 @@ function NavHeader({
   isActive: boolean;
   setIsActive: any;
 }) {
-  const [hasMounted, setHasMounted] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const navRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const linkControlsArray = navData.map(() => useAnimation());
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
   useLayoutEffect(() => {
-    if (!hasMounted) return;
-
     if (isActive) {
       // Save the current scroll position
       setScrollPosition(window.scrollY);
       // Disable scroll and hide scrollbar
+
       document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.width = "100%";
+
+      setTimeout(() => {
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.width = "100%";
+      }, 650);
 
       controls.start({
         width: "100%",
@@ -73,7 +70,7 @@ function NavHeader({
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isActive, hasMounted]);
+  }, [isActive]);
 
   return (
     <>
