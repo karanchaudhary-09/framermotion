@@ -12,6 +12,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        noise: "url('/images/noise.jpg')",
+      },
       animation: {
         aurora: "aurora 60s linear infinite",
         scroll:
@@ -33,6 +36,7 @@ module.exports = {
         },
       },
       colors: {
+        primaryShade: "#E4EBF6",
         primaryBlue: "#34405F",
         primaryOrange: "#EB6C00",
         gray8: "#595959",

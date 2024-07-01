@@ -7,7 +7,7 @@ export const BurgerHeader = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="block  lg:hidden">
+    <div className="block lg:hidden">
       <BurgerMenu isActive={isActive} setIsActive={setIsActive} />
       <NavHeader isActive={isActive} setIsActive={setIsActive} />
     </div>

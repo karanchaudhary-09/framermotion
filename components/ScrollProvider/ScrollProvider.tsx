@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import { BurgerHeader } from "../navbar/BurgerHeader";
 import { StickyFooter } from "../Footer/StickyFooter";
 import TopHeader from "../navbar/TopHeader";
+import { AnimatePresence } from "framer-motion";
 
 export default function ScrollProvider({
   children,
@@ -21,13 +22,16 @@ export default function ScrollProvider({
   });
 
   return (
-    <div className="provider-container  ">
-      <BurgerHeader />
-      <div className="relative">
-        <TopHeader />
+    <AnimatePresence mode="wait">
+      <div className="provider-container  ">
+        <BurgerHeader />
+
+        <div className="relative hidden lg:block">
+          <TopHeader />
+        </div>
+        {children}
+        <StickyFooter />
       </div>
-      {children}
-      <StickyFooter />
-    </div>
+    </AnimatePresence>
   );
 }
