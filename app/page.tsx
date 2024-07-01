@@ -6,7 +6,7 @@ import ZoomParallex from "@/components/ZoomParallex/ZoomParallex";
 
 export default function Home() {
   return (
-    <main className="bg-black">
+    <main className="bg-black ">
       {/* <HeroSection /> */}
       <AuroraBackground>
         <LandingHeaderSection />

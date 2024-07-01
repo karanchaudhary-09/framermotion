@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        noise: "url('/images/noise.jpg')",
+        noise: "url('/images/noise.svg')",
       },
       animation: {
         aurora: "aurora 60s linear infinite",
@@ -40,6 +40,10 @@ module.exports = {
         primaryBlue: "#34405F",
         primaryOrange: "#EB6C00",
         gray8: "#595959",
+      },
+      screens: {
+        "mobile": "360px",
+        "3xl": "1850px",
       },
     },
   },
