@@ -1,16 +1,16 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import Lenis from "lenis";
-import { TopHeader } from "../navbar/TopHeader";
-import { twMerge } from "tailwind-merge";
+import { BurgerHeader } from "../navbar/BurgerHeader";
 import { StickyFooter } from "../Footer/StickyFooter";
+import TopHeader from "../navbar/TopHeader";
 
 export default function ScrollProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const lenis = new Lenis();
 
     function raf(time: any) {
@@ -21,8 +21,11 @@ export default function ScrollProvider({
   });
 
   return (
-    <div className="provider-container ">
-      <TopHeader />
+    <div className="provider-container  ">
+      <BurgerHeader />
+      <div className="relative">
+        <TopHeader />
+      </div>
       {children}
       <StickyFooter />
     </div>

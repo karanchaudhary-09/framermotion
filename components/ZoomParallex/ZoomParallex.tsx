@@ -68,7 +68,7 @@ export default function ZoomParallex() {
                 index === 3 && " top-[2vh] left-[29vw] w-[30vw] h-[25vh]",
                 index === 4 && " top-[32vh] left-[-33vw] w-[25vw] h-[30vh]",
                 index === 5 && " top-[30vh] left-[-2vw] w-[30vw] h-[25vh]",
-                index === 6 && " top-[30vh] left-[31vw] w-[28vw] h-[20vh]",
+                index === 6 && " top-[30vh] left-[31vw] w-[28vw] h-[20vh]"
               )}
             >
               <Image

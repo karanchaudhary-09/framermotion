@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function AboutPage() {
-  return <main className="about-page  w-full overflow-hidden">AboutPage</main>;
+  return (
+    <div className="about-page h-screen ">
+      <h1>About Us</h1>
+    </div>
+  );
 }
