@@ -80,7 +80,6 @@ export const FlipWords = ({
             }}
           >
             {letter}
-            {currentWord?.length === index + 1 && "."}
           </motion.span>
         ))}
       </motion.div>
