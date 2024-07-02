@@ -1,20 +1,20 @@
-import {
-  InfiniteLoopingAnimation,
-  InfiniteLoopingCardAnimation,
-} from "@/components/animation/InfiniteLoopAnimtion";
+import { ResuableHeaderSection } from "@/components/common/ResuableHeaderSection";
+import ContactForm from "@/components/contact/ContactForm";
 import React from "react";
 
-export default function SmoothScroll() {
+export default function ContactPage() {
   return (
-    <div className="  text-4xl flex flex-col justify-center items-center text-white">
-      <div className="about-page h-screen flex items-center justify-center  ">
-        <h1 className="text-black font-bold text-9xl">Contact Us</h1>
-      </div>
-
-      <div className="w-full overflow-hidden bg-black">
+    <div className="contact-page flex flex-col justify-center items-center bg-noise bg-no-repeat bg-cover bg-primaryShade ">
+      <ResuableHeaderSection
+        title="Contact Us"
+        description=" Do you have a question, an idea, or a project you need help with?
+        Contact us!"
+      />
+      <ContactForm />
+      <div className="h-40"></div>
+      {/* <div className="w-full overflow-hidden bg-black">
         <InfiniteLoopingCardAnimation />
-      </div>
-      <div className="h-screen w-full "></div>
+      </div> */}{" "}
     </div>
   );
 }

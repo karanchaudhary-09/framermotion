@@ -25,7 +25,6 @@ export default function ScrollProvider({
     <AnimatePresence mode="wait">
       <div className="provider-container  ">
         <BurgerHeader />
-
         <div className="relative hidden lg:block">
           <TopHeader />
         </div>

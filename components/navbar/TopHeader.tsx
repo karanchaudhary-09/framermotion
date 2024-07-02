@@ -53,7 +53,7 @@ export default function TopHeader() {
         )}
       >
         <Link href={"/"} className="logo font-bold text-primaryBlue">
-          Karan
+          Karan.
         </Link>
         <nav className="nav-header flex gap-5 justify-start items-center ">
           {navData?.map((item, index) => (

@@ -1,9 +1,13 @@
+import { ResuableHeaderSection } from "@/components/common/ResuableHeaderSection";
 import React from "react";
 
 export default function ServicePage() {
   return (
-    <div className="about-page h-screen flex items-center justify-center  ">
-      <h1 className="text-black font-bold text-9xl">Service Page</h1>
+    <div className="service-page  flex flex-col justify-center items-center bg-noise bg-no-repeat bg-cover bg-primaryShade  ">
+      <ResuableHeaderSection
+        title="Service"
+        description="We provide the best service to our customers."
+      />
     </div>
   );
 }
