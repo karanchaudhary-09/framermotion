@@ -19,15 +19,18 @@ function BlogHeroSection() {
             <span className="mix-blend-screen text-indigo-500">
               Karan Chaudhary
             </span>
-            , Front-End Web App Developer.
+            .
           </h2>
         </div>
 
         <div className="middle-wrapper  w-full flex justify-center items-center  ">
-          <div className="text-2xl mobile:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[90px] 3xl:text-[110px]  font-bold flex flex-wrap justify-center">
+          <div className="w-full relative bg-noise text-3xl mobile:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[90px] 3xl:text-[110px]  font-bold flex flex-wrap justify-center">
             {word?.map((item, index) => (
-              <div key={index} className="flex pl-4 xl:pl-6 bg-noise  ">
-                <CommonLetter word={item} />
+              <div
+                key={index}
+                className="flex relative uppercase bg-transparent lg:bg-white px-4 text-black mix-blend-screen  "
+              >
+                {item}
               </div>
             ))}
           </div>
@@ -41,37 +44,17 @@ function BlogHeroSection() {
             </div>
             <p className="text-xl font-bold w-1/2">Scroll Down</p>
           </div>
-          {/* <div className="text-xl font-bold w-full lg:w-1/3 xl:w-1/4">
-            <p>
-              Feel Free to send me a message if you want to enhance your
-              recruitment.
-            </p>
-            <div className="flex gap-2 items-center flex-wrap justify-start">
-              {["Facebook", "Twitter", "Linkedin", "Github"].map(
-                (item, index) => (
-                  <Link
-                    href={"#"}
-                    key={index}
-                    className="text-primaryBlue flex justify-center items-center gap-1 group hover:text-violet-400 transition-all duration-300 ease-linear hover:underline"
-                  >
-                    <div className="w-2 h-2 bg-black rounded-full  group-hover:bg-violet-400 transition-all duration-300 ease-linear"></div>
-                    {item}
-                  </Link>
-                )
-              )}
-            </div>
-          </div> */}
         </div>
       </div>
 
       <div className="hidden lg:block absolute bottom-0  w-full  h-[80vh] ">
-        {/* <Image
+        <Image
           src="/images/profile.png"
           alt="hero image"
           width={300}
           height={300}
           className="w-full h-full absolute bottom-0 object-contain "
-        /> */}
+        />
       </div>
     </div>
   );
