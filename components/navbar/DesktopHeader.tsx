@@ -1,18 +1,17 @@
 "use client";
-import React, { useState } from "react";
-import BurgerMenu from "./BurgerMenu";
-import NavHeader from "./NavHeader";
-import Link from "next/link";
+import cn from "@/utils/cn";
+import { navData } from "@/utils/data/navData";
+import classNames from "classnames";
 import {
-  useMotionValueEvent,
-  useScroll,
   motion,
   AnimatePresence,
+  useMotionValueEvent,
+  useScroll,
 } from "framer-motion";
-import classNames from "classnames";
+import Link from "next/link";
+import React, { useState } from "react";
 
-export const BurgerHeader = () => {
-  const [isActive, setIsActive] = useState(false);
+export default function DesktopHeader() {
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(true);
@@ -36,7 +35,7 @@ export const BurgerHeader = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <motion.header
         initial={{
           opacity: 1,
           y: -100,
@@ -48,20 +47,26 @@ export const BurgerHeader = () => {
         transition={{
           duration: 0.2,
         }}
-        className={classNames(
-          " lg:hidden w-full fixed top-0 z-[999] page-header flex  justify-between px-4 sm:px-8 items-center bg-white shadow-2xl text-black ",
+        className={cn(
+          " w-full fixed top-0 z-[999] page-header  lg:flex justify-between items-center bg-white shadow-2xl text-black  py-6 px-[4vw]",
           classNames
         )}
       >
-        <Link
-          href={"/"}
-          className="logo font-bold z-[99] text-xl  text-primaryBlue"
-        >
+        <Link href={"/"} className="logo font-bold text-primaryBlue">
           Karan.
         </Link>
-        <BurgerMenu isActive={isActive} setIsActive={setIsActive} />
-      </motion.div>
-      <NavHeader isActive={isActive} setIsActive={setIsActive} />
+        <nav className="nav-header flex gap-5 justify-start items-center ">
+          {navData?.map((item, index) => (
+            <Link
+              href={item?.url}
+              key={index}
+              className="border hover:text-primaryBlue hover:border-primaryBlue border-transparent transition-all duration-300 ease-linear px-2 py-1 rounded-md"
+            >
+              {item?.name}
+            </Link>
+          ))}
+        </nav>
+      </motion.header>
     </AnimatePresence>
   );
-};
+}

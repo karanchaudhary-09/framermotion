@@ -28,7 +28,7 @@ function BlogHeroSection() {
             {word?.map((item, index) => (
               <div
                 key={index}
-                className="flex relative uppercase bg-transparent lg:bg-white px-4 text-black mix-blend-screen  "
+                className="flex relative uppercase bg-transparent  px-4 text-black mix-blend-screen  "
               >
                 {item}
               </div>
@@ -48,13 +48,13 @@ function BlogHeroSection() {
       </div>
 
       <div className="hidden lg:block absolute bottom-0  w-full  h-[80vh] ">
-        <Image
+        {/* <Image
           src="/images/profile.png"
           alt="hero image"
           width={300}
           height={300}
           className="w-full h-full absolute bottom-0 object-contain "
-        />
+        /> */}
       </div>
     </div>
   );

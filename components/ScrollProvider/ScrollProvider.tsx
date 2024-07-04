@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from "react";
 import Lenis from "lenis";
 import { BurgerHeader } from "../navbar/BurgerHeader";
 import { StickyFooter } from "../Footer/StickyFooter";
-import TopHeader from "../navbar/TopHeader";
+import TopHeader from "../navbar/DesktopHeader";
 import { AnimatePresence } from "framer-motion";
 
 export default function ScrollProvider({

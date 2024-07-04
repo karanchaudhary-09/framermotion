@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { navData } from "@/utils/data/navData";
 import Link from "next/link";
+import BurgerMenu from "./BurgerMenu";
 
 function NavHeader({
   isActive,
@@ -76,7 +77,7 @@ function NavHeader({
     <>
       <motion.div
         ref={navRef}
-        className="navbar-wrapper  z-[1000] bg-gray-800 fixed top-0  w-full h-[100dvh] right-0  text-white "
+        className="navbar-wrapper z-[1000] bg-gray-800 fixed top-0  w-full h-[100dvh] right-0  text-white "
         animate={controls}
       >
         <nav className="nav-wrapper flex justify-center items-center h-screen  ">

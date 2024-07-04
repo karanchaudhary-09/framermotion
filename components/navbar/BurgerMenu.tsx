@@ -5,9 +5,11 @@ import { twMerge } from "tailwind-merge";
 function BurgerMenu({
   isActive,
   setIsActive,
+  className,
 }: {
   isActive: boolean;
   setIsActive: any;
+  className?: string;
 }) {
   const [mouseOn, setMouseOn] = useState(false);
 
@@ -15,10 +17,11 @@ function BurgerMenu({
     <>
       <div
         className={twMerge(
-          " header-wrapper z-[1001]  fixed  h-20 w-20 transistion bg-white cursor-pointer transform duration-500 ease-out rounded-full right-1 top-1 flex flex-col gap-2 justify-center items-center",
+          " header-wrapper z-[1001] relative h-16 w-16 transistion border-2 cursor-pointer transform duration-500 ease-out rounded-full flex flex-col gap-2 justify-center items-center",
           mouseOn && !isActive && "bg-gray-800",
           mouseOn && isActive && "bg-white",
-          !mouseOn && isActive && "bg-transparent"
+          !mouseOn && isActive && "bg-transparent",
+          className
         )}
         onMouseEnter={() => {
           setMouseOn(true);

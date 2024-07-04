@@ -1,17 +1,18 @@
 "use client";
-import cn from "@/utils/cn";
-import { navData } from "@/utils/data/navData";
-import classNames from "classnames";
+import React, { useState } from "react";
+import BurgerMenu from "./BurgerMenu";
+import NavHeader from "./NavHeader";
+import Link from "next/link";
 import {
-  motion,
-  AnimatePresence,
   useMotionValueEvent,
   useScroll,
+  motion,
+  AnimatePresence,
 } from "framer-motion";
-import Link from "next/link";
-import React, { useState } from "react";
+import classNames from "classnames";
 
-export default function TopHeader() {
+export const BurgerHeader = () => {
+  const [isActive, setIsActive] = useState(false);
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(true);
@@ -35,7 +36,7 @@ export default function TopHeader() {
 
   return (
     <AnimatePresence mode="wait">
-      <motion.header
+      <motion.div
         initial={{
           opacity: 1,
           y: -100,
@@ -47,26 +48,20 @@ export default function TopHeader() {
         transition={{
           duration: 0.2,
         }}
-        className={cn(
-          " w-full fixed top-0 z-[999] page-header  lg:flex justify-between items-center bg-white shadow-2xl text-black  py-6 px-[4vw]",
+        className={classNames(
+          " lg:hidden w-full fixed top-0 z-[999] page-header flex  justify-between px-4 sm:px-8 items-center bg-white shadow-2xl text-black ",
           classNames
         )}
       >
-        <Link href={"/"} className="logo font-bold text-primaryBlue">
+        <Link
+          href={"/"}
+          className="logo font-bold z-[99] text-xl  text-primaryBlue"
+        >
           Karan.
         </Link>
-        <nav className="nav-header flex gap-5 justify-start items-center ">
-          {navData?.map((item, index) => (
-            <Link
-              href={item?.url}
-              key={index}
-              className="border hover:text-primaryBlue hover:border-primaryBlue border-transparent transition-all duration-300 ease-linear px-2 py-1 rounded-md"
-            >
-              {item?.name}
-            </Link>
-          ))}
-        </nav>
-      </motion.header>
+        <BurgerMenu isActive={isActive} setIsActive={setIsActive} />
+      </motion.div>
+      <NavHeader isActive={isActive} setIsActive={setIsActive} />
     </AnimatePresence>
   );
-}
+};
