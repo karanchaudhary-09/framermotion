@@ -1,10 +1,9 @@
 "use client";
 import React, { useLayoutEffect } from "react";
 import Lenis from "lenis";
-import { BurgerHeader } from "../navbar/BurgerHeader";
 import { StickyFooter } from "../Footer/StickyFooter";
-import TopHeader from "../navbar/DesktopHeader";
 import { AnimatePresence } from "framer-motion";
+import TopHeader from "../navbar/navbar";
 
 export default function ScrollProvider({
   children,
@@ -23,11 +22,8 @@ export default function ScrollProvider({
 
   return (
     <AnimatePresence mode="wait">
-      <div className="provider-container  ">
-        <BurgerHeader />
-        <div className="relative hidden lg:block">
-          <TopHeader />
-        </div>
+      <div className="provider-container ">
+        <TopHeader />
         {children}
         <StickyFooter />
       </div>

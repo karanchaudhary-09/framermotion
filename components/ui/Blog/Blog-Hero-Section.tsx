@@ -1,10 +1,7 @@
 "use client";
-import { CommonLetter } from "@/components/common/CommonLetter";
 import cn from "@/utils/cn";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { FaPlay } from "react-icons/fa";
 import { HiArrowLongDown } from "react-icons/hi2";
 
 function BlogHeroSection() {
@@ -23,15 +20,19 @@ function BlogHeroSection() {
           </h2>
         </div>
 
-        <div className="middle-wrapper  w-full flex justify-center items-center  ">
-          <div className="w-full relative bg-noise text-3xl mobile:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[90px] 3xl:text-[110px]  font-bold flex flex-wrap justify-center">
+        <div className="middle-wrapper w-full flex justify-center items-center  ">
+          <div className="w-full relative flex flex-wrap justify-center">
             {word?.map((item, index) => (
-              <div
+              <h2
                 key={index}
-                className="flex relative uppercase bg-transparent  px-4 text-black mix-blend-screen  "
+                className={cn(
+                  " text-center text-4xl font-bold uppercase px-2 md:px-4 leading-10 tracking-[5%] md:text-[56px] md:leading-[64px] lg:text-[64px] xl:text-[100px] xl:leading-[100px]",
+                  index === 2 && "text-outline ",
+                  index === 3 && "text-outline-2 "
+                )}
               >
                 {item}
-              </div>
+              </h2>
             ))}
           </div>
         </div>
@@ -45,16 +46,6 @@ function BlogHeroSection() {
             <p className="text-xl font-bold w-1/2">Scroll Down</p>
           </div>
         </div>
-      </div>
-
-      <div className="hidden lg:block absolute bottom-0  w-full  h-[80vh] ">
-        {/* <Image
-          src="/images/profile.png"
-          alt="hero image"
-          width={300}
-          height={300}
-          className="w-full h-full absolute bottom-0 object-contain "
-        /> */}
       </div>
     </div>
   );

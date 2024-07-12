@@ -1,36 +1,33 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { navData } from "@/utils/data/navData";
 import Link from "next/link";
-import BurgerMenu from "./BurgerMenu";
+import cn from "@/utils/cn";
+import { navData } from "@/utils/data/navData";
 
-function NavHeader({
+function SideNavbar({
   isActive,
   setIsActive,
 }: {
   isActive: boolean;
-  setIsActive: any;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const navRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
-  const linkControlsArray = navData.map(() => useAnimation());
-
+  const linkControlsArray = navData?.map(() => useAnimation());
+  //   update the code
   useLayoutEffect(() => {
     if (isActive) {
       // Save the current scroll position
       setScrollPosition(window.scrollY);
       // Disable scroll and hide scrollbar
-
-      document.body.style.overflow = "hidden";
-
-      setTimeout(() => {
-        document.body.style.position = "fixed";
-        document.body.style.top = `-${window.scrollY}px`;
-        document.body.style.width = "100%";
-      }, 650);
+      document.body.style.cssText = `
+        overflow: hidden;
+        position: fixed;
+        top: -${window.scrollY}px;
+        width: 100%;
+      `;
 
       controls.start({
         width: "100%",
@@ -76,22 +73,43 @@ function NavHeader({
   return (
     <>
       <motion.div
-        ref={navRef}
-        className="navbar-wrapper z-[1000] bg-gray-800 fixed top-0  w-full h-[100dvh] right-0  text-white "
+        className="navbar-wrapper fixed right-0 top-0 z-[1000] h-[100dvh] w-0   bg-gray-800  text-white"
         animate={controls}
       >
-        <nav className="nav-wrapper flex justify-center items-center h-screen  ">
+        <div
+          className={cn(
+            " burger-wrapper transistion relative z-[1001] flex h-14 w-14 translate-x-4 translate-y-4 transform cursor-pointer flex-col items-center justify-center gap-2 rounded-full duration-500 ease-out "
+          )}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsActive(!isActive);
+          }}
+        >
+          <div
+            className={cn(
+              " transistion h-[2px] w-[60%] duration-300 ease-out",
+              isActive ? "absolute -rotate-[45deg] bg-white  " : ""
+            )}
+          ></div>
+          <div
+            className={cn(
+              " transistion  h-[2px] w-[60%]  duration-300 ease-out",
+              isActive ? "absolute rotate-[45deg] bg-white" : ""
+            )}
+          ></div>
+        </div>
+        <nav className="nav-wrapper flex h-screen items-center justify-center  ">
           <div className="flex flex-col gap-6">
             {navData?.map((item, index) => (
               <motion.div
                 key={index}
-                className="link-wrapper opacity-0 transform translate-x-[300px] ease-linear duration-75"
+                className="link-wrapper translate-x-[300px] transform opacity-0 duration-75 ease-linear"
                 animate={linkControlsArray[index]}
               >
                 <Link
                   href={item?.url}
                   onClick={() => setIsActive(false)}
-                  className="text-5xl 2xl:text-6xl font-bold text-white hover:text-gray-500 hover:underline transition-all duration-300 ease-linear"
+                  className="text-5xl font-bold text-white transition-all duration-300 ease-linear hover:text-gray-500 hover:underline 2xl:text-6xl"
                 >
                   {item?.name}
                 </Link>
@@ -104,4 +122,4 @@ function NavHeader({
   );
 }
 
-export default NavHeader;
+export default SideNavbar;
