@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ContactPage() {
   return (
-    <div className="contact-page flex flex-col justify-center items-center bg-noise bg-no-repeat bg-cover bg-primaryShade ">
+    <div className="contact-page flex flex-col justify-center items-center bg-noise bg-no-repeat bg-cover bg-primaryShade overflow-hidden">
       <ResuableHeaderSection
         title="Contact Us"
         description=" Do you have a question, an idea, or a project you need help with?

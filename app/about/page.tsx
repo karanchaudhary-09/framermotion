@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <main className="about-page w-full   ">
+    <main className="about-page w-full overflow-hidden  ">
       <BlogHeroSection />
     </main>
   );
