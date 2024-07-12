@@ -35,7 +35,7 @@ export default function StickyRevealSection() {
       <div className="w-full lg:w-[68vw] sticky-card-wrapper relative flex flex-col">
         {projects?.map((project, index) => (
           <motion.div
-            key={index}
+            key={project?.title}
             className={cn(
               "sticky h-[50vh] lg:h-[80vh] w-full flex justify-center items-center rounded-2xl overflow-hidden p-10"
             )}
