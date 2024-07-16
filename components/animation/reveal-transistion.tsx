@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import classNames from "classnames";
 
-export const RevealTransistion = ({
+export const RevealTransition = ({
   children,
   className,
   delay = 0.3,
@@ -36,7 +36,7 @@ export const RevealTransistion = ({
       <motion.div
         ref={ref}
         initial={{ width: "100%", height: "100%", backgroundColor: "none" }}
-        animate={isInView ? { width: "0%", backgroundColor: "purple" } : {}}
+        animate={isInView ? { width: "0%", backgroundColor: "#648bff" } : {}}
         transition={{
           duration: duration,
           delay: 0,

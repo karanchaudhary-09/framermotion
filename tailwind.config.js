@@ -40,9 +40,10 @@ module.exports = {
         primaryBlue: "#34405F",
         primaryOrange: "#EB6C00",
         gray8: "#595959",
+        primaryViolet: "#648bff",
       },
       screens: {
-        "mobile": "360px",
+        mobile: "360px",
         "3xl": "1850px",
       },
     },

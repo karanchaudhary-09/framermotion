@@ -1,5 +1,5 @@
 "use client";
-import { RevealTransistion } from "@/components/animation/reveal-transistion";
+import { RevealTransition } from "@/components/animation/reveal-transistion";
 import cn from "@/utils/cn";
 import Image from "next/image";
 import React from "react";
@@ -12,7 +12,7 @@ function BlogHeroSection() {
     <div className="w-full h-[80dvh] lg:h-screen relative  flex items-center justify-center bg-noise bg-no-repeat bg-center bg-cover bg-primaryShade px-[4vw] overflow-hidden">
       <div className="w-full z-20 flex flex-col gap-28 lg:gap-20 xl:gap-32 2xl:gap-44   ">
         <div className="top-wrapper w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10 lg:gap-0">
-          <RevealTransistion>
+          <RevealTransition>
             <h2 className="text-xl text-center lg:text-start sm:text-2xl  3xl:text-4xl font-semibold w-full lg:w-[40vw]  ">
               Hello, I’m{" "}
               <span className="mix-blend-screen text-indigo-500">
@@ -20,11 +20,11 @@ function BlogHeroSection() {
               </span>
               .
             </h2>
-          </RevealTransistion>
+          </RevealTransition>
         </div>
 
         <div className="middle-wrapper w-full flex justify-center items-center  ">
-          <RevealTransistion>
+          <RevealTransition>
             <div className="w-full relative flex flex-wrap justify-center ">
               {word?.map((item, index) => (
                 <h2
@@ -39,7 +39,7 @@ function BlogHeroSection() {
                 </h2>
               ))}
             </div>
-          </RevealTransistion>
+          </RevealTransition>
         </div>
 
         <div className="bottom-wrapper  lg:absolute left-0 bottom-20  w-full flex flex-col gap-10 lg:flex-row justify-between items-center px-[4vw] ">
