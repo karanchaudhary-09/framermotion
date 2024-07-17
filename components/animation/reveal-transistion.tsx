@@ -6,8 +6,8 @@ import classNames from "classnames";
 export const RevealTransition = ({
   children,
   className,
-  delay = 0.3,
-  duration = 0.35,
+  delay = 0.5,
+  duration = 0.3,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -24,7 +24,7 @@ export const RevealTransition = ({
         initial={{ opacity: 0, y: 35 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{
-          duration: 0.35,
+          duration: 0.3,
           delay: duration,
           ease: "easeIn",
         }}
@@ -36,10 +36,9 @@ export const RevealTransition = ({
       <motion.div
         ref={ref}
         initial={{ width: "100%", height: "100%", backgroundColor: "none" }}
-        animate={isInView ? { width: "0%", backgroundColor: "#648bff" } : {}}
+        animate={isInView ? { width: "0%", backgroundColor: "#5046e6" } : {}}
         transition={{
           duration: duration,
-          delay: 0,
           ease: "easeIn",
         }}
         className="absolute top-0 left-0 w-full h-full  "
