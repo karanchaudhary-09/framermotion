@@ -1,4 +1,5 @@
 "use client";
+import { sendEmail } from "@/service/sendEmail-services";
 import cn from "@/utils/cn";
 import React from "react";
 
@@ -17,6 +18,9 @@ export default function ContactForm() {
       value: "1234 Main St, New York, NY 10001",
     },
   ];
+  const [email, setEmail] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
   return (
     <div className="contact-form-wrapper w-[80vw] flex flex-col justify-center items-center rounded-xl overflow-hidden ">
@@ -36,9 +40,24 @@ export default function ContactForm() {
         ))}
       </div>
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          console.log("Form Submitted");
+          try {
+            const result = await sendEmail(
+              email,
+              `${name} Contact from portfolio`,
+              message
+            );
+
+            if (result) {
+              setEmail("");
+              setName("");
+              setMessage("");
+            }
+            console.log("Email sent successfully:", result);
+          } catch (error) {
+            console.error("Error sending email:", error);
+          }
         }}
         className="contact-form w-full bg-black flex flex-col justify-center items-center gap-14  px-4 py-10 lg:p-14"
       >
@@ -50,12 +69,14 @@ export default function ContactForm() {
             required
             placeholder="Name"
             type="text"
+            onChange={(e) => setName(e.target.value)}
             className="w-full bg-primaryBlue text-white px-4 py-3 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryShade focus:ring-opacity-50 focus:bg-primaryShade focus:text-primaryBlue"
           />
           <input
             required
             placeholder="Email"
             type="email"
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full bg-primaryBlue text-white px-4 py-3 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryShade focus:ring-opacity-50 focus:bg-primaryShade focus:text-primaryBlue"
           />
         </div>
@@ -66,6 +87,7 @@ export default function ContactForm() {
           id="message"
           cols={30}
           rows={10}
+          onChange={(e) => setMessage(e.target.value)}
           className="w-full bg-primaryBlue text-white px-4 py-3 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryShade focus:ring-opacity-50 focus:bg-primaryShade focus:text-primaryBlue"
         ></textarea>
         <button
