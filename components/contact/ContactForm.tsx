@@ -18,6 +18,8 @@ export default function ContactForm() {
     },
   ];
 
+
+
   return (
     <div className="contact-form-wrapper w-[80vw] flex flex-col justify-center items-center rounded-xl overflow-hidden ">
       <div className="w-full bg-white grid grid-cols-1 lg:grid-cols-3">

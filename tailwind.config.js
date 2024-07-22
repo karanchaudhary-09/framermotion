@@ -46,6 +46,9 @@ module.exports = {
         mobile: "360px",
         "3xl": "1850px",
       },
+      fontFamily: {
+        greycliff: ["Greycliff CF", "sans-serif"],
+      },
     },
   },
   plugins: [addVariablesForColors], // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
