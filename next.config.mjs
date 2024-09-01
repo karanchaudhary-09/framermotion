@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     swcMinify: true,
+    serverActions: true,
   },
   images: {
     domains: ["images.unsplash.com"],
