@@ -1,3 +1,4 @@
+import OrganicAnimation from "@/components/animation/organic-animation";
 import SmoothScrollCardSection from "@/components/smoothScrollCardSection/SmoothScrollCardSection";
 import HomeHeaderSection from "@/components/ui/Home/home-header-section";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <div className="mt-40"></div>
       <SmoothScrollCardSection />
       <div className="h-screen"></div>
+      <OrganicAnimation />
       {/* <HeroSection2 /> */}
     </main>
   );

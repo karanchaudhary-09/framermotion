@@ -3,26 +3,6 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import ScrollProvider from "@/components/ScrollProvider/ScrollProvider";
 
-import localFont from "next/font/local";
-
-// Define your local font
-const greycliff = localFont({
-  src: [
-    {
-      path: "../public/fonts/greycliffcf/regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/greycliffcf/bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    // Add other weights and styles as needed
-  ],
-  variable: "--font-greycliff", // This creates a CSS variable
-});
-
 const inter = Inter({ subsets: ["latin"] });
 const sora = Sora({ subsets: ["latin"] });
 
@@ -38,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={greycliff.className}>
+      <body className={inter.className}>
         <ScrollProvider>{children}</ScrollProvider>
       </body>
     </html>
